@@ -6,51 +6,63 @@
     <title>Become a CECCORP Dealer</title>
     <style>
         :root {
-            --primary: #007bff;
-            --accent: #dc3545;
-            --bg: #f8f9fa;
+            --primary: #0052cc;
+            --primary-light: #3366ff;
+            --accent: #e81b23;
+            --accent-light: #ff3d45;
+            --bg: #f9fafb;
+            --bg-alt: #f0f4f8;
             --card: #ffffff;
-            --text: #242424;
-            --muted: #5a5a5a;
-            --shadow: 0 18px 45px rgba(0, 0, 0, 0.12);
-            --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.08);
-            --radius: 16px;
+            --text: #1a202c;
+            --text-secondary: #4a5568;
+            --text-muted: #718096;
+            --border: #e2e8f0;
+            --success: #48bb78;
+            --shadow-xs: 0 4px 6px rgba(0, 0, 0, 0.07);
+            --shadow-sm: 0 10px 15px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 20px 25px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 25px 50px rgba(0, 0, 0, 0.15);
+            --radius: 12px;
+            --transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         * {
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
             margin: 0;
             padding: 0;
             color: var(--text);
-            line-height: 1.6;
-            background: linear-gradient(180deg, rgba(248, 249, 250, 1) 0%, rgba(255, 255, 255, 1) 100%);
+            line-height: 1.7;
+            background: var(--bg);
         }
 
         header {
-            background: linear-gradient(90deg, rgba(0, 123, 255, 1) 0%, rgba(0, 68, 204, 1) 100%);
+            background: linear-gradient(135deg, var(--primary) 0%, #003d99 100%);
             color: white;
-            padding: 24px 20px;
-            text-align: center;
+            padding: 18px 20px;
             position: sticky;
             top: 0;
-            z-index: 50;
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+            z-index: 100;
+            box-shadow: var(--shadow-md);
+            backdrop-filter: blur(10px);
         }
 
         header .brand {
-            font-size: 1.35rem;
-            letter-spacing: 0.05em;
+            font-size: 1.3rem;
+            letter-spacing: -0.5px;
             margin: 0;
-            font-weight: 700;
+            font-weight: 800;
         }
 
         .hero {
-            padding: 80px 20px 60px;
-            text-align: center;
+            padding: 100px 20px 80px;
             position: relative;
             overflow: hidden;
         }
@@ -59,175 +71,252 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: radial-gradient(circle at top, rgba(0, 123, 255, 0.12), transparent 70%);
+            background: radial-gradient(circle at 20% 50%, rgba(0, 82, 204, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 80%, rgba(232, 27, 35, 0.06) 0%, transparent 50%);
             pointer-events: none;
         }
 
         .hero-content {
             position: relative;
-            max-width: 1100px;
+            max-width: 1200px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 40px;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
             align-items: center;
         }
 
         .hero h1 {
-            font-size: clamp(2rem, 4vw, 3rem);
-            margin-bottom: 18px;
-            color: var(--primary);
+            font-size: clamp(2.2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin: 0 0 24px 0;
+            color: var(--text);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+        }
+
+        .hero h1 strong {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .hero p {
-            font-size: 1.15rem;
-            max-width: 520px;
-            margin: 0 auto 32px;
-            color: var(--muted);
+            font-size: 1.1rem;
+            margin: 0 0 32px 0;
+            color: var(--text-secondary);
+            line-height: 1.8;
         }
 
         .hero-ctas {
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
             gap: 14px;
-            margin-top: 12px;
+            margin-top: 20px;
         }
 
         .btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 14px 24px;
-            border-radius: 999px;
+            padding: 14px 28px;
+            border-radius: 8px;
             border: 2px solid transparent;
             font-weight: 700;
-            font-size: 0.95rem;
+            font-size: 1rem;
             text-decoration: none;
             cursor: pointer;
-            transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+            transition: var(--transition);
+            position: relative;
         }
 
         .btn-primary {
-            background: var(--primary);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: white;
-            box-shadow: 0 12px 24px rgba(0, 123, 255, 0.22);
+            box-shadow: 0 12px 28px rgba(0, 82, 204, 0.25);
         }
 
         .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 16px 32px rgba(0, 123, 255, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(0, 82, 204, 0.35);
         }
 
         .btn-secondary {
-            background: transparent;
+            background: white;
             color: var(--primary);
-            border-color: rgba(0, 123, 255, 0.45);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-xs);
         }
 
         .btn-secondary:hover {
-            background: rgba(0, 123, 255, 0.08);
+            background: var(--primary);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(0, 82, 204, 0.25);
         }
 
         .card {
             background: var(--card);
             border-radius: var(--radius);
-            box-shadow: var(--shadow-soft);
-            padding: 28px;
-            border: 1px solid rgba(0, 0, 0, 0.06);
-            transition: transform 220ms ease, box-shadow 220ms ease;
+            box-shadow: var(--shadow-sm);
+            padding: 32px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
         }
 
         .card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow);
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(0, 82, 204, 0.1);
+        }
+
+        .card h3 {
+            margin: 0 0 18px 0;
+            color: var(--text);
+            font-size: 1.3rem;
+        }
+
+        .card ul {
+            margin: 16px 0 0;
+            padding-left: 24px;
+            color: var(--text-secondary);
+        }
+
+        .card ul li {
+            margin-bottom: 12px;
+            line-height: 1.6;
         }
 
         .section {
-            padding: 80px 20px;
+            padding: 100px 20px;
             max-width: 1200px;
             margin: 0 auto;
         }
 
+        .section:nth-child(odd) {
+            background: var(--bg);
+        }
+
+        .section:nth-child(even) {
+            background: white;
+        }
+
         .section-title {
             text-align: center;
-            margin-bottom: 40px;
+            margin-bottom: 60px;
         }
 
         .section-title h2 {
-            font-size: 2.2rem;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 900;
             margin: 0;
-            color: var(--primary);
+            color: var(--text);
+            line-height: 1.2;
+            letter-spacing: -0.01em;
+        }
+
+        .section-title h2 span {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .section-title p {
             margin: 14px auto 0;
-            max-width: 720px;
-            color: var(--muted);
-            font-size: 1rem;
+            max-width: 600px;
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.7;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 28px;
         }
 
         .benefit-item {
-            text-align: left;
-            padding: 24px;
+            padding: 32px;
             border-radius: var(--radius);
-            border: 1px solid rgba(0, 0, 0, 0.06);
-            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
-            background: rgba(255, 255, 255, 0.96);
-            transition: transform 220ms ease, box-shadow 220ms ease;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-xs);
+            background: var(--card);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
         }
 
         .benefit-item:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 22px 45px rgba(0, 0, 0, 0.14);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(0, 82, 204, 0.2);
+        }
+
+        .benefit-icon {
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, rgba(0, 82, 204, 0.1) 0%, rgba(232, 27, 35, 0.05) 100%);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 1.8rem;
         }
 
         .benefit-item h3 {
-            color: var(--accent);
-            margin-top: 0;
+            color: var(--primary);
+            margin: 0 0 12px 0;
+            font-size: 1.25rem;
+            font-weight: 800;
+        }
+
+        .benefit-item p {
+            margin: 0;
+            color: var(--text-secondary);
+            line-height: 1.7;
         }
 
         .clients {
-            background: var(--bg);
+            background: var(--bg-alt);
         }
 
         .client-list {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 22px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
         }
 
         .client-item {
-            width: 220px;
-            min-height: 180px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            gap: 10px;
             background: var(--card);
             border-radius: var(--radius);
-            padding: 22px;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(0, 0, 0, 0.06);
+            padding: 28px;
+            box-shadow: var(--shadow-xs);
+            border: 1px solid var(--border);
             text-align: center;
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .client-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
         }
 
         .client-item h3 {
             margin: 0;
-            font-size: 1.1rem;
+            font-size: 1.15rem;
             color: var(--primary);
+            font-weight: 800;
         }
 
         .client-item p {
-            margin: 0;
-            color: var(--muted);
+            margin: 8px 0 0;
+            color: var(--text-secondary);
             font-size: 0.95rem;
         }
 
@@ -235,26 +324,52 @@
             background: white;
         }
 
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
+        }
+
         .testimonial-item {
-            padding: 26px;
+            padding: 32px;
             border-radius: var(--radius);
             background: var(--bg);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-xs);
+            transition: var(--transition);
             border-left: 5px solid var(--accent);
-            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.06);
+            position: relative;
+        }
+
+        .testimonial-item::before {
+            content: '"';
+            font-size: 3rem;
+            color: var(--accent);
+            opacity: 0.1;
+            position: absolute;
+            top: -10px;
+            left: 20px;
+        }
+
+        .testimonial-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
         }
 
         .testimonial-item p {
-            margin: 0 0 14px;
+            margin: 0 0 16px;
             color: var(--text);
             font-size: 1rem;
+            font-style: italic;
+            line-height: 1.8;
         }
 
         .testimonial-item cite {
             display: block;
-            color: var(--muted);
+            color: var(--text-secondary);
             font-size: 0.95rem;
             font-style: normal;
-            margin-top: 6px;
+            margin-top: 12px;
             font-weight: 700;
         }
 
@@ -269,95 +384,146 @@
 
         form {
             display: grid;
-            gap: 18px;
+            gap: 22px;
+        }
+
+        form div {
+            display: flex;
+            flex-direction: column;
         }
 
         label {
             font-weight: 700;
             display: block;
-            margin-bottom: 6px;
+            margin-bottom: 8px;
             color: var(--text);
+            font-size: 0.95rem;
         }
 
         input, textarea {
             width: 100%;
             padding: 14px 16px;
-            border-radius: 10px;
-            border: 1px solid rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            border: 1.5px solid var(--border);
             font-size: 1rem;
+            font-family: inherit;
             outline: none;
-            transition: border 180ms ease, box-shadow 180ms ease;
+            transition: var(--transition);
+            background: var(--card);
         }
 
         input:focus,
         textarea:focus {
             border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(0, 123, 255, 0.16);
+            box-shadow: 0 0 0 4px rgba(0, 82, 204, 0.1);
         }
 
         button {
-            padding: 14px 20px;
-            background-color: var(--accent);
+            padding: 16px 24px;
+            background: linear-gradient(135deg, var(--accent) 0%, #ff5a63 100%);
             color: white;
             border: none;
-            border-radius: 999px;
+            border-radius: 8px;
             cursor: pointer;
             font-size: 1rem;
-            font-weight: 700;
-            transition: transform 180ms ease, box-shadow 180ms ease;
+            font-weight: 800;
+            transition: var(--transition);
+            box-shadow: 0 12px 28px rgba(232, 27, 35, 0.25);
+            letter-spacing: 0.5px;
         }
 
         button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(232, 27, 35, 0.35);
+        }
+
+        button:active {
+            transform: translateY(-1px);
         }
 
         footer {
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--primary) 0%, #003d99 100%);
             color: white;
-            padding: 50px 20px;
+            padding: 60px 20px 40px;
             text-align: center;
+        }
+
+        footer h2 {
+            font-size: 2rem;
+            margin: 0 0 12px 0;
+            font-weight: 900;
+        }
+
+        footer p {
+            margin: 0 0 24px;
+            font-size: 1.05rem;
         }
 
         .cta-buttons {
             display: flex;
             justify-content: center;
-            gap: 18px;
+            gap: 16px;
             flex-wrap: wrap;
-            margin-top: 20px;
+            margin-top: 24px;
         }
 
         .cta-button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            padding: 14px 22px;
+            padding: 14px 28px;
             background-color: var(--accent);
             color: white;
             text-decoration: none;
-            border-radius: 999px;
-            font-weight: 700;
-            box-shadow: 0 14px 28px rgba(0, 0, 0, 0.18);
-            transition: transform 180ms ease, box-shadow 180ms ease;
+            border-radius: 8px;
+            font-weight: 800;
+            box-shadow: 0 12px 28px rgba(232, 27, 35, 0.3);
+            transition: var(--transition);
+            letter-spacing: 0.3px;
         }
 
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
+            transform: translateY(-3px);
+            box-shadow: 0 16px 40px rgba(232, 27, 35, 0.4);
+            background-color: var(--accent-light);
         }
 
-        @media (max-width: 760px) {
+        footer > p:last-child {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
             .hero-content {
                 grid-template-columns: 1fr;
-                gap: 24px;
+                gap: 40px;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+
+            .card {
+                padding: 24px;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+
+            .benefit-item {
+                padding: 24px;
             }
 
             .client-list {
-                gap: 14px;
-            }
-
-            .hero p {
-                font-size: 1.05rem;
+                grid-template-columns: 1fr;
             }
         }
     </style>
@@ -370,19 +536,20 @@
     <section class="hero">
         <div class="hero-content">
             <div>
-                <h1>Become a CECCORP Dealer and Grow Your Business</h1>
-                <p>Join our network of successful dealers and offer your customers the best CA Glue, Epoxy, and Polyurethane products. Benefit from competitive pricing, dedicated support, and exceptional quality that sets CECCORP apart.</p>
+                <h1>Become a <strong>CECCORP Dealer</strong> and Grow Your Business</h1>
+                <p>Join our network of successful dealers and offer your customers the best CA Glue, Epoxy, and Polyurethane products. Benefit from competitive pricing, dedicated support, and exceptional quality.</p>
                 <div class="hero-ctas">
-                    <a class="btn btn-primary" href="#apply">Apply Now</a>
-                    <a class="btn btn-secondary" href="tel:+16044572000">Call Us</a>
+                    <a class="btn btn-primary" href="#apply">Apply Now →</a>
+                    <a class="btn btn-secondary" href="tel:+16044572000">📞 Call Us</a>
                 </div>
             </div>
             <div class="card">
-                <h3>Fast Track Your Partnership</h3>
-                <ul style="margin: 16px 0 0; padding-left: 20px; color: var(--muted);">
+                <h3>🚀 Fast Track Your Partnership</h3>
+                <ul>
                     <li>Priority access to new products & promotions</li>
                     <li>Clear pricing and a predictable supply chain</li>
                     <li>Dedicated technical and account support</li>
+                    <li>Proven track record of partner success</li>
                 </ul>
             </div>
         </div>
@@ -390,31 +557,37 @@
 
     <section class="section benefits">
         <div class="section-title">
-            <h2>Why Choose CECCORP Products?</h2>
+            <h2>Why Choose <span>CECCORP</span>?</h2>
             <p>We support our dealers with premium adhesives, robust inventory, and a partnership mindset designed to help you grow.</p>
         </div>
         <div class="grid benefit-grid">
             <div class="benefit-item">
+                <div class="benefit-icon">💪</div>
                 <h3>Superior Bonding Strength</h3>
                 <p>Our adhesives provide unmatched bonding power for a wide range of materials, ensuring long-lasting results in demanding applications.</p>
             </div>
             <div class="benefit-item">
+                <div class="benefit-icon">⚡</div>
                 <h3>Fast Curing Times</h3>
                 <p>Experience quick-setting formulas that reduce production time and increase efficiency in your operations.</p>
             </div>
             <div class="benefit-item">
+                <div class="benefit-icon">🔧</div>
                 <h3>Versatile Applications</h3>
                 <p>From industrial manufacturing to DIY projects, our products work on plastics, metals, wood, and more.</p>
             </div>
             <div class="benefit-item">
+                <div class="benefit-icon">💰</div>
                 <h3>Competitive Pricing</h3>
                 <p>Maximize your profit margins with our dealer pricing structure while offering quality products to your customers.</p>
             </div>
             <div class="benefit-item">
+                <div class="benefit-icon">🤝</div>
                 <h3>Dedicated Support</h3>
                 <p>Our expert team is here to assist with product selection, technical advice, and partnership growth.</p>
             </div>
             <div class="benefit-item">
+                <div class="benefit-icon">✅</div>
                 <h3>Reliable Supply Chain</h3>
                 <p>Count on consistent product availability and timely deliveries to keep your business running smoothly.</p>
             </div>
@@ -423,36 +596,36 @@
 
     <section class="section clients">
         <div class="section-title">
-            <h2>Trusted by Industries and Partners Worldwide</h2>
+            <h2>Trusted by Leading <span>Industries</span></h2>
             <p>From national distributors to local shops, CECCORP is the adhesive choice for people who demand results.</p>
         </div>
         <div class="client-list">
             <div class="client-item">
-                <h3>Lordco</h3>
+                <h3>🚗 Lordco</h3>
                 <p>Leading auto parts retailer partnering for quality adhesives</p>
             </div>
             <div class="client-item">
-                <h3>Manufacturing</h3>
+                <h3>🏭 Manufacturing</h3>
                 <p>Precision assembly and bonding solutions</p>
             </div>
             <div class="client-item">
-                <h3>Construction</h3>
+                <h3>🏢 Construction</h3>
                 <p>Durable adhesives for structural applications</p>
             </div>
             <div class="client-item">
-                <h3>Automotive</h3>
+                <h3>🚙 Automotive</h3>
                 <p>High-performance bonding for vehicle assembly</p>
             </div>
             <div class="client-item">
-                <h3>Electronics</h3>
+                <h3>⚙️ Electronics</h3>
                 <p>Micro-precision adhesives for circuit boards</p>
             </div>
             <div class="client-item">
-                <h3>Crafts & DIY</h3>
+                <h3>🎨 Crafts & DIY</h3>
                 <p>Easy-to-use products for creative projects</p>
             </div>
             <div class="client-item">
-                <h3>Retail</h3>
+                <h3>🛒 Retail</h3>
                 <p>Quality adhesives for hardware stores</p>
             </div>
         </div>
@@ -460,59 +633,59 @@
 
     <section class="section testimonials">
         <div class="section-title">
-            <h2>What Our Dealers Say</h2>
+            <h2>What Our <span>Dealers Say</span></h2>
             <p>Hear from partners who trust CECCORP to deliver performance, reliability, and consistent results.</p>
         </div>
         <div class="testimonial-grid">
             <div class="testimonial-item">
-                <p>"CECCORP products have transformed our business. The quality and reliability are unmatched, and our customers love the results."</p>
-                <cite>- John D., Manufacturing Dealer</cite>
+                <p>CECCORP products have transformed our business. The quality and reliability are unmatched, and our customers love the results.</p>
+                <cite>— John D., Manufacturing Dealer</cite>
             </div>
             <div class="testimonial-item">
-                <p>"The support team is fantastic. They've helped us grow our dealer network significantly with their expertise and guidance."</p>
-                <cite>- Sarah M., Retail Partner</cite>
+                <p>The support team is fantastic. They've helped us grow our dealer network significantly with their expertise and guidance.</p>
+                <cite>— Sarah M., Retail Partner</cite>
             </div>
             <div class="testimonial-item">
-                <p>"Competitive pricing and fast delivery make CECCORP our go-to supplier. We've seen a 30% increase in sales since partnering."</p>
-                <cite>- Mike R., Construction Supplies</cite>
+                <p>Competitive pricing and fast delivery make CECCORP our go-to supplier. We've seen a 30% increase in sales since partnering.</p>
+                <cite>— Mike R., Construction Supplies</cite>
             </div>
         </div>
     </section>
 
     <section class="section form-section" id="apply">
         <div class="section-title">
-            <h2>Apply to Become a Dealer</h2>
+            <h2>Begin Your <span>Dealer Journey</span></h2>
             <p>Complete the form below and our team will be in touch with next steps.</p>
         </div>
         <div class="form-card card">
             <form action="#" method="post">
                 <div>
-                    <label for="name">Full Name:</label>
-                    <input type="text" id="name" name="name" required>
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Smith" required>
                 </div>
                 <div>
-                    <label for="email">Email Address:</label>
-                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
                 </div>
                 <div>
-                    <label for="phone">Phone Number:</label>
-                    <input type="tel" id="phone" name="phone" required>
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 (604) 457-2000" required>
                 </div>
                 <div>
-                    <label for="company">Company Name:</label>
-                    <input type="text" id="company" name="company" required>
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" placeholder="Your Company" required>
                 </div>
                 <div>
-                    <label for="business-type">Business Type:</label>
+                    <label for="business-type">Business Type</label>
                     <input type="text" id="business-type" name="business-type" placeholder="e.g., Retail, Manufacturing, Wholesale">
                 </div>
                 <div>
-                    <label for="experience">Years in Business:</label>
-                    <input type="number" id="experience" name="experience">
+                    <label for="experience">Years in Business</label>
+                    <input type="number" id="experience" name="experience" placeholder="e.g., 5">
                 </div>
                 <div>
-                    <label for="message">Tell us about your business and why you'd like to become a dealer:</label>
-                    <textarea id="message" name="message" rows="5" required></textarea>
+                    <label for="message">Tell Us About Your Business</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Why would you like to become a CECCORP dealer?" required></textarea>
                 </div>
                 <button type="submit">Submit Application</button>
             </form>
@@ -520,20 +693,13 @@
     </section>
 
     <footer>
-        <h2>Ready to Get Started?</h2>
-        <p>Contact us today to learn more about becoming a CECCORP dealer.</p>
+        <h2>Ready to Build Your Success?</h2>
+        <p>Join CECCORP's growing network of successful dealers today.</p>
         <div class="cta-buttons">
-            <a href="tel:+16044572000" class="cta-button">Call Us: +1 604-457-2000</a>
-            <a href="#" class="cta-button" onclick="startChatbot()">Start Chat</a>
+            <a href="tel:+16044572000" class="cta-button">📞 Call: +1 604-457-2000</a>
+            <a href="mailto:support@ceccorp.ca" class="cta-button">✉️ Email Us</a>
         </div>
         <p>&copy; 2025 CECCORP. All Rights Reserved.</p>
     </footer>
-
-    <script>
-        function startChatbot() {
-            // Placeholder for chatbot integration
-            alert('Chatbot feature coming soon! Please call us at +1 604-457-2000 for immediate assistance.');
-        }
-    </script>
 </body>
 </html>
