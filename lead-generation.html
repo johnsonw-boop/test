@@ -247,6 +247,9 @@
             transition: var(--transition);
             display: flex;
             flex-direction: column;
+            min-width: 0;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         .benefit-item:hover {
@@ -272,6 +275,7 @@
             margin: 0 0 12px 0;
             font-size: 1.25rem;
             font-weight: 800;
+            word-break: break-word;
         }
 
         .benefit-item p {
@@ -608,6 +612,12 @@
             color: var(--primary);
         }
 
+        .struggle-text {
+            min-width: 0;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+        }
+
         .struggle-text h3 {
             margin: 0 0 6px 0;
             color: var(--primary);
@@ -620,6 +630,8 @@
             color: var(--text-secondary);
             font-size: 0.95rem;
             line-height: 1.6;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         @media (max-width: 768px) {
