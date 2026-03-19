@@ -510,6 +510,78 @@
             box-shadow: var(--shadow-lg);
         }
 
+        .empathy-section {
+            background: linear-gradient(135deg, #f0f4f8 0%, #e8ecf0 100%);
+            padding: 60px 20px;
+        }
+
+        .empathy-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .empathy-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .empathy-header h2 {
+            font-size: clamp(1.8rem, 4vw, 2.4rem);
+            font-weight: 900;
+            margin: 0 0 12px 0;
+            color: var(--text);
+        }
+
+        .empathy-header p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin: 0;
+        }
+
+        .struggles-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .struggle-item {
+            background: var(--card);
+            padding: 24px;
+            border-radius: var(--radius);
+            border: 1.5px solid var(--border);
+            box-shadow: var(--shadow-xs);
+            transition: var(--transition);
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+        }
+
+        .struggle-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-sm);
+            border-color: rgba(232, 27, 35, 0.2);
+        }
+
+        .struggle-icon {
+            font-size: 1.8rem;
+            flex-shrink: 0;
+            min-width: 40px;
+        }
+
+        .struggle-text h3 {
+            margin: 0 0 6px 0;
+            color: var(--primary);
+            font-size: 1.05rem;
+            font-weight: 800;
+        }
+
+        .struggle-text p {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
         @media (max-width: 768px) {
             .hero-content {
                 grid-template-columns: 1fr;
@@ -558,6 +630,59 @@
                 </div>
             </div>
             <img src="https://www.mach1services.com/wp-content/uploads/2022/01/websites-to-buy-auto-parts-online.jpg" alt="Auto parts retail dealer" class="hero-image">
+        </div>
+    </section>
+
+    <section class="empathy-section">
+        <div class="empathy-content">
+            <div class="empathy-header">
+                <h2>We Understand Your Challenges</h2>
+                <p>Dealers like you face unique obstacles. CECCORP is built to solve them.</p>
+            </div>
+            <div class="struggles-list">
+                <div class="struggle-item">
+                    <div class="struggle-icon">📦</div>
+                    <div class="struggle-text">
+                        <h3>Supply Chain Uncertainty</h3>
+                        <p>Inconsistent inventory and delayed shipments disrupt your ability to serve customers reliably.</p>
+                    </div>
+                </div>
+                <div class="struggle-item">
+                    <div class="struggle-icon">💸</div>
+                    <div class="struggle-text">
+                        <h3>Thin Profit Margins</h3>
+                        <p>Finding quality products at prices that let you stay competitive and profitable is tough.</p>
+                    </div>
+                </div>
+                <div class="struggle-item">
+                    <div class="struggle-icon">❓</div>
+                    <div class="struggle-text">
+                        <h3>Lack of Product Support</h3>
+                        <p>Without expert guidance, recommending the right adhesive becomes guesswork for you and your customers.</p>
+                    </div>
+                </div>
+                <div class="struggle-item">
+                    <div class="struggle-icon">😔</div>
+                    <div class="struggle-text">
+                        <h3>Partner Frustration</h3>
+                        <p>Suppliers who don't care about your success leave you feeling abandoned and unsupported.</p>
+                    </div>
+                </div>
+                <div class="struggle-item">
+                    <div class="struggle-icon">⚖️</div>
+                    <div class="struggle-text">
+                        <h3>Quality Inconsistency</h3>
+                        <p>Unreliable product quality damages your reputation and erodes customer trust over time.</p>
+                    </div>
+                </div>
+                <div class="struggle-item">
+                    <div class="struggle-icon">📞</div>
+                    <div class="struggle-text">
+                        <h3>Poor Communication</h3>
+                        <p>Dealing with suppliers who are slow to respond leaves you frustrated and your questions unanswered.</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
