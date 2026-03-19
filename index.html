@@ -53,17 +53,26 @@
             z-index: 100;
             box-shadow: var(--shadow-md);
             backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         header .brand {
-            font-size: 1.3rem;
-            letter-spacing: -0.5px;
             margin: 0;
-            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        header .brand img {
+            max-height: 50px;
+            object-fit: contain;
+            width: auto;
         }
 
         .hero {
-            padding: 100px 20px 80px;
+            padding: 130px 20px 100px;
             position: relative;
             overflow: hidden;
         }
@@ -286,6 +295,67 @@
 
         .clients {
             background: var(--bg-alt);
+            overflow: hidden;
+        }
+
+        .logo-carousel {
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            height: 180px;
+            mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+            -webkit-mask-image: linear-gradient(90deg, transparent, black 10%, black 90%, transparent);
+        }
+
+        @keyframes scroll-left {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .logo-track {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            animation: scroll-left 30s linear infinite;
+            white-space: nowrap;
+        }
+
+        .logo-item {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 140px;
+            min-width: 220px;
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-xs);
+            border: 1px solid var(--border);
+            padding: 16px;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .logo-item:hover {
+            transform: scale(1.05);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .logo-item img {
+            max-width: 100%;
+            max-height: 110px;
+            object-fit: contain;
+        }
+
+        .logo-item span {
+            font-weight: 800;
+            color: var(--text);
+            font-size: 1.1rem;
+            text-align: center;
         }
 
         .client-list {
@@ -501,6 +571,12 @@
             border-top: 1px solid rgba(255, 255, 255, 0.2);
         }
 
+        .hero-image-wrapper {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+        }
+
         .hero-image {
             width: 100%;
             height: auto;
@@ -508,11 +584,27 @@
             box-shadow: var(--shadow-md);
             object-fit: cover;
             transition: var(--transition);
+            display: block;
         }
 
         .hero-image:hover {
             transform: scale(1.02);
             box-shadow: var(--shadow-lg);
+        }
+
+        .hero-patch {
+            position: absolute;
+            bottom: -12px;
+            left: -12px;
+            background: linear-gradient(135deg, var(--primary) 0%, #003d99 100%);
+            color: white;
+            padding: 16px 24px;
+            border-radius: 50px;
+            font-weight: 900;
+            font-size: 1.1rem;
+            box-shadow: var(--shadow-md);
+            border: 3px solid white;
+            z-index: 10;
         }
 
         .empathy-section {
@@ -545,7 +637,7 @@
 
         .struggles-list {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 24px;
         }
 
@@ -613,6 +705,7 @@
         }
 
         .struggle-text {
+            flex: 1;
             min-width: 0;
             word-wrap: break-word;
             overflow-wrap: break-word;
@@ -623,6 +716,7 @@
             color: var(--primary);
             font-size: 1.05rem;
             font-weight: 800;
+            width: 100%;
         }
 
         .struggle-text p {
@@ -632,6 +726,8 @@
             line-height: 1.6;
             word-wrap: break-word;
             overflow-wrap: break-word;
+            width: 100%;
+        }
         }
 
         @media (max-width: 768px) {
@@ -668,7 +764,9 @@
 </head>
 <body>
     <header>
-        <div class="brand">CECCORP - Quality Adhesives</div>
+        <div class="brand">
+            <img src="https://m.media-amazon.com/images/S/stores-image-uploads-na-prod/1/AmazonStores/A2EUQ1WTGCTBG2/071159a0b89d560a17220b17b651132c.w1800.h718.png" alt="CECCORP Logo">
+        </div>
     </header>
 
     <section class="hero">
@@ -681,7 +779,10 @@
                     <a class="btn btn-secondary" href="tel:+16044572000"><span class="material-icons">phone</span> Call Us</a>
                 </div>
             </div>
-            <img src="https://www.mach1services.com/wp-content/uploads/2022/01/websites-to-buy-auto-parts-online.jpg" alt="Auto parts retail dealer" class="hero-image">
+            <div class="hero-image-wrapper">
+                <img src="https://www.mach1services.com/wp-content/uploads/2022/01/websites-to-buy-auto-parts-online.jpg" alt="Auto parts retail dealer" class="hero-image">
+                <div class="hero-patch">20+ years</div>
+            </div>
         </div>
     </section>
 
@@ -718,20 +819,6 @@
                     <div class="struggle-text">
                         <h3>Partner Frustration</h3>
                         <p>Suppliers who don't care about your success leave you feeling abandoned and unsupported.</p>
-                    </div>
-                </div>
-                <div class="struggle-item">
-                    <div class="struggle-icon"><span class="material-icons">feedback</span></div>
-                    <div class="struggle-text">
-                        <h3>Quality Inconsistency</h3>
-                        <p>Unreliable product quality damages your reputation and erodes customer trust over time.</p>
-                    </div>
-                </div>
-                <div class="struggle-item">
-                    <div class="struggle-icon"><span class="material-icons">communication</span></div>
-                    <div class="struggle-text">
-                        <h3>Poor Communication</h3>
-                        <p>Dealing with suppliers who are slow to respond leaves you frustrated and your questions unanswered.</p>
                     </div>
                 </div>
             </div>
@@ -782,34 +869,53 @@
             <h2>Trusted by Leading <span>Industries</span></h2>
             <p>From national distributors to local shops, CECCORP is the adhesive choice for people who demand results.</p>
         </div>
-        <div class="client-list">
-            <div class="client-item">
-                <h3><span class="material-icons">directions_car</span> Lordco</h3>
-                <p>Leading auto parts retailer partnering for quality adhesives</p>
-            </div>
-            <div class="client-item">
-                <h3><span class="material-icons">factory</span> Manufacturing</h3>
-                <p>Precision assembly and bonding solutions</p>
-            </div>
-            <div class="client-item">
-                <h3><span class="material-icons">apartment</span> Construction</h3>
-                <p>Durable adhesives for structural applications</p>
-            </div>
-            <div class="client-item">
-                <h3><span class="material-icons">two_wheeler</span> Automotive</h3>
-                <p>High-performance bonding for vehicle assembly</p>
-            </div>
-            <div class="client-item">
-                <h3><span class="material-icons">settings</span> Electronics</h3>
-                <p>Micro-precision adhesives for circuit boards</p>
-            </div>
-            <div class="client-item">
-                <h3><span class="material-icons">palette</span> Crafts & DIY</h3>
-                <p>Easy-to-use products for creative projects</p>
-            </div>
-            <div class="client-item">
-                <h3><span class="material-icons">shopping_cart</span> Retail</h3>
-                <p>Quality adhesives for hardware stores</p>
+        <div class="logo-carousel">
+            <div class="logo-track">
+                <!-- First set of logos -->
+                <div class="logo-item">
+                    <span>Lordco</span>
+                </div>
+                <div class="logo-item">
+                    <span>Napa Auto</span>
+                </div>
+                <div class="logo-item">
+                    <span>Canadian Tire</span>
+                </div>
+                <div class="logo-item">
+                    <span>Home Depot</span>
+                </div>
+                <div class="logo-item">
+                    <span>Rona</span>
+                </div>
+                <div class="logo-item">
+                    <span>Lowe's</span>
+                </div>
+                <div class="logo-item">
+                    <span>Westcan Auto</span>
+                </div>
+                
+                <!-- Duplicate set for seamless loop -->
+                <div class="logo-item">
+                    <span>Lordco</span>
+                </div>
+                <div class="logo-item">
+                    <span>Napa Auto</span>
+                </div>
+                <div class="logo-item">
+                    <span>Canadian Tire</span>
+                </div>
+                <div class="logo-item">
+                    <span>Home Depot</span>
+                </div>
+                <div class="logo-item">
+                    <span>Rona</span>
+                </div>
+                <div class="logo-item">
+                    <span>Lowe's</span>
+                </div>
+                <div class="logo-item">
+                    <span>Westcan Auto</span>
+                </div>
             </div>
         </div>
     </section>
