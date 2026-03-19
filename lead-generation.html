@@ -496,6 +496,20 @@
             border-top: 1px solid rgba(255, 255, 255, 0.2);
         }
 
+        .hero-image {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .hero-image:hover {
+            transform: scale(1.02);
+            box-shadow: var(--shadow-lg);
+        }
+
         @media (max-width: 768px) {
             .hero-content {
                 grid-template-columns: 1fr;
@@ -536,22 +550,14 @@
     <section class="hero">
         <div class="hero-content">
             <div>
-                <h1>Become a <strong>CECCORP Dealer</strong> and Grow Your Business</h1>
-                <p>Join our network of successful dealers and offer your customers the best CA Glue, Epoxy, and Polyurethane products. Benefit from competitive pricing, dedicated support, and exceptional quality.</p>
+                <h1>Become a <strong>CECCORP Dealer</strong></h1>
+                <p>Grow your business with our industry-leading adhesives and dedicated dealer support.</p>
                 <div class="hero-ctas">
                     <a class="btn btn-primary" href="#apply">Apply Now →</a>
                     <a class="btn btn-secondary" href="tel:+16044572000">📞 Call Us</a>
                 </div>
             </div>
-            <div class="card">
-                <h3>🚀 Fast Track Your Partnership</h3>
-                <ul>
-                    <li>Priority access to new products & promotions</li>
-                    <li>Clear pricing and a predictable supply chain</li>
-                    <li>Dedicated technical and account support</li>
-                    <li>Proven track record of partner success</li>
-                </ul>
-            </div>
+            <img src="https://www.mach1services.com/wp-content/uploads/2022/01/websites-to-buy-auto-parts-online.jpg" alt="Auto parts retail dealer" class="hero-image">
         </div>
     </section>
 
